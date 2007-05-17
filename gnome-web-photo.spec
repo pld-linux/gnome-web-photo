@@ -19,6 +19,7 @@ BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 1:2.6.27
+BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.198
 BuildRequires:	xulrunner-devel
 Requires(post,preun):	GConf2
