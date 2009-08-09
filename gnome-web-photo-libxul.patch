@@ -1,10 +1,12 @@
 diff -urN gnome-web-photo-0.4/src/Makefile.am gnome-web-photo-0.4.new/src/Makefile.am
 --- gnome-web-photo-0.4/src/Makefile.am	2008-03-10 20:08:40.000000000 +0100
 +++ gnome-web-photo-0.4.new/src/Makefile.am	2008-07-08 18:04:10.000000000 +0200
-@@ -13,6 +13,7 @@
+@@ -13,6 +13,9 @@
  	necko		\
  	pipnss		\
  	pref		\
++	qcms		\
++	string		\
 +	thebes		\
  	uriloader	\
  	view		\
