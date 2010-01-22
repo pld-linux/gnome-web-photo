@@ -23,7 +23,7 @@ BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 1:2.6.31
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.198
-BuildRequires:	xulrunner-devel >= 1.9-5
+BuildRequires:	xulrunner-devel >= 1.9.2.3.6-1
 Requires(post,preun):	GConf2
 %requires_eq_to	xulrunner xulrunner-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
