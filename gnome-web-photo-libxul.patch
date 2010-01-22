@@ -20,3 +20,14 @@ diff -urN gnome-web-photo-0.4/src/Makefile.am gnome-web-photo-0.4.new/src/Makefi
  	-DSHARE_DIR=\"$(pkgdatadir)\"   	\
  	-DLOCALEDIR=\"$(datadir)/locale\"	\
  	-DGECKO_HOME=\"$(GECKO_HOME)\"	\
+--- gnome-web-photo-0.9/m4/libxul.m4	2009-04-20 17:43:33.000000000 +0200
++++ gnome-web-photo-0.9/m4/libxul.m4.new	2010-01-22 21:07:15.164217015 +0100
+@@ -59,7 +59,7 @@
+ # I can figure this out, do it like this:
+ libxul_cv_libdir="$($PKG_CONFIG --variable=sdkdir $libxul_cv_libxul_pkg)/bin"
+ 
+-libxul_cv_includes="$($PKG_CONFIG --cflags-only-I libxul-unstable libxul)"
++libxul_cv_includes="$($PKG_CONFIG --cflags-only-I libxul)"
+ 
+ AC_DEFINE([HAVE_LIBXUL],[1],[Define for libxul])
+ 
