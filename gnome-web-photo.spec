@@ -2,7 +2,7 @@ Summary:	Tool to generate full-size image files and thumbnails
 Summary(pl.UTF-8):	Narzędzie do generowania pełnowymiarowych plików obrazów i miniaturek
 Name:		gnome-web-photo
 Version:	0.9
-Release:	11
+Release:	12
 License:	GPL
 Group:		Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-web-photo/0.9/%{name}-%{version}.tar.bz2
@@ -21,6 +21,7 @@ BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel >= 1:2.6.31
+BuildRequires:	nspr-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.198
 BuildRequires:	xulrunner-devel >= 1.9.2.3.6-1
@@ -30,6 +31,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # we have strict deps for it
 %define		_noautoreq	libxpcom.so
+
+# libs passed in wrong order (as needed reaches before libs)
+%define		filterout_ld	-Wl,--as-needed
 
 %description
 GNOME Web Photographer is a tool to generate full-size image files and
