@@ -1,40 +1,26 @@
 Summary:	Tool to generate full-size image files and thumbnails
 Summary(pl.UTF-8):	Narzędzie do generowania pełnowymiarowych plików obrazów i miniaturek
 Name:		gnome-web-photo
-Version:	0.9
-Release:	18
+Version:	0.10.1
+Release:	1
 License:	GPL
 Group:		Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-web-photo/0.9/%{name}-%{version}.tar.bz2
-# Source0-md5:	62952330a62b463df5fef315f4a7cb93
-Patch0:		%{name}-libxul.patch
-Patch1:		%{name}-xul_api_change.patch
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-web-photo/0.10/%{name}-%{version}.tar.bz2
+# Source0-md5:	26716f6cd81185568b3e4e4a61870662
 URL:		http://www.gnome.org/
 BuildRequires:	GConf2-devel >= 2.22.0
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	gettext-devel
+BuildRequires:	glib2-devel >= 1:2.14.0
 BuildRequires:	gnome-common >= 2.12.0
-BuildRequires:	gtk+2-devel >= 2:2.16.0
+BuildRequires:	gtk+3-devel >= 3.0.0
+BuildRequires:	gtk-webkit3 >= 1.1.23
 BuildRequires:	intltool >= 0.40.0
-BuildRequires:	libjpeg-devel
-BuildRequires:	libpng-devel
-BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
-BuildRequires:	libxml2-devel >= 1:2.6.31
-BuildRequires:	nspr-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.198
-BuildRequires:	xulrunner-devel >= 1.9.2.3.6-1
-Requires(post,preun):	GConf2
-%requires_eq_to	xulrunner xulrunner-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-# we have strict deps for it
-%define		_noautoreq	libxpcom.so
-
-# libs passed in wrong order (as needed reaches before libs)
-%define		filterout_ld	-Wl,--as-needed
 
 %description
 GNOME Web Photographer is a tool to generate full-size image files and
@@ -46,8 +32,6 @@ plików obrazów i miniaturek.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
 
 %build
 %{__glib_gettextize}
@@ -71,19 +55,12 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post
-%gconf_schema_install thumbnailer.schemas
-
-%preun
-%gconf_schema_uninstall thumbnailer.schemas
-
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog HACKING NEWS README TODO
-%{_sysconfdir}/gconf/schemas/thumbnailer.schemas
 %attr(755,root,root) %{_bindir}/gnome-web-photo
 %attr(755,root,root) %{_bindir}/gnome-web-print
 %attr(755,root,root) %{_bindir}/gnome-web-thumbnail
 %dir %{_datadir}/gnome-web-photo
-%{_datadir}/gnome-web-photo/prefs.js
 %{_datadir}/gnome-web-photo/style.css
+%{_datadir}/thumbnailers/gnome-web-photo.thumbnailer
