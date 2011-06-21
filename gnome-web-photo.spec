@@ -15,7 +15,7 @@ BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.14.0
 BuildRequires:	gnome-common >= 2.12.0
 BuildRequires:	gtk+3-devel >= 3.0.0
-BuildRequires:	gtk-webkit3 >= 1.1.23
+BuildRequires:	gtk-webkit3-devel >= 1.1.23
 BuildRequires:	intltool >= 0.40.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
