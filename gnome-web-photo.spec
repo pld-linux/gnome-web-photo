@@ -1,15 +1,15 @@
 Summary:	Tool to generate full-size image files and thumbnails
 Summary(pl.UTF-8):	Narzędzie do generowania pełnowymiarowych plików obrazów i miniaturek
 Name:		gnome-web-photo
-Version:	0.10.5
+Version:	0.10.6
 Release:	1
 License:	GPL
 Group:		Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-web-photo/0.10/%{name}-%{version}.tar.xz
-# Source0-md5:	d842a49a65853ef9b1e3e54f55752ba2
+# Source0-md5:	6fbf72173149ffae57e66605e4898113
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf >= 2.59
-BuildRequires:	automake >= 1:1.9
+BuildRequires:	automake >= 1:1.11
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.14.0
 BuildRequires:	gnome-common >= 2.12.0
